@@ -2,10 +2,9 @@
 
 ## Issues
 
-Do not submit duplicate issues. Follow issue templates to the most reasonable
-extent, and in good faith. It is okay to submit both an issue and a pull request
-(PR) resolving said issue. It is also okay to submit a PR by itself with no
-accompanying issue.
+Do not submit duplicate issues. Follow issue templates in good faith. It is okay
+to submit both an issue and a pull request (PR) resolving said issue. It is also
+okay to submit a PR by itself with no accompanying issue.
 
 ## Code
 
@@ -45,10 +44,14 @@ Do this instead:
 
 Since changes with no effect on the project version require no type, the
 following types, and nothing like them, should ever be included in commit
-messages: `build`, `chore`, `ci`, `docs`, `style`, `refactor`, `test`. When
-there is no needed type, there should be no `:` to delimit it. `feat` should be
-used in place of `perf` or a similar type, because improving performance is a
-feature.
+messages: `build`, `chore`, `ci`, `style`, `refactor`, `test`. (When there is no
+needed type, there should be no `:` to delimit it.)
+
+For more guidance, `feat` should be used in place of `perf`, because improving
+performance is a feature. What others would call `docs` changes, actually
+constitute corrections and clarifications, and so `fix` is most appropriate for
+them; such documentation changes should in fact impact the software version,
+because they can be published to third parties via new tags.
 
 Furthermore, note that message subjects should be lowercase, with the exception
 of names and stylizations. Messages should also be in the present tense.
