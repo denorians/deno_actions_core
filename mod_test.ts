@@ -1,5 +1,5 @@
-import * as path from "https://deno.land/std@0.129.0/path/mod.ts";
-import * as fs from "https://deno.land/std@0.129.0/node/fs.ts";
+import { path } from "./test_deps.ts";
+import { fs } from "./test_deps.ts";
 import * as core from "./mod.ts";
 import * as fixtures from "./test/fixtures.ts";
 
@@ -14,17 +14,9 @@ import {
 
 // import { HttpClient } from "@actions/http-client"; // TODO : implement oidc
 
-import {
-  assertEquals,
-  assertThrows,
-} from "https://deno.land/std@0.129.0/testing/asserts.ts";
+import { assertEquals, assertThrows } from "./test_deps.ts";
 
-import {
-  beforeAll,
-  beforeEach,
-  describe,
-  it,
-} from "https://deno.land/x/test_suite@0.13.0/mod.ts";
+import { beforeAll, beforeEach, describe, it } from "./test_deps.ts";
 
 const testEnvVars = {
   "my var": "",

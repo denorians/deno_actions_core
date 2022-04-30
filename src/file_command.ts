@@ -1,9 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 
-import {
-  appendFileSync,
-  existsSync,
-} from "https://deno.land/std@0.129.0/node/fs.ts";
+import { appendFileSync, existsSync } from "../deps.ts";
 
 import { eol, toCommandValue } from "./utils.ts";
 

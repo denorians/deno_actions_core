@@ -1,7 +1,7 @@
-import * as path from "https://deno.land/std@0.129.0/path/mod.ts";
-import * as fs from "https://deno.land/std@0.129.0/node/fs.ts";
+import { path } from "../test_deps.ts";
+import { fs } from "../test_deps.ts";
 
-import { assertEquals } from "https://deno.land/std@0.129.0/testing/asserts.ts";
+import { assertEquals } from "../test_deps.ts";
 
 import { __dirname, assertToHaveBeenCalledTimes } from "../src/utils.ts";
 
