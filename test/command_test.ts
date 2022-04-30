@@ -10,7 +10,7 @@ import {
   beforeEach,
   describe,
   it,
-} from "https://deno.land/x/test_suite@0.13.0/mod.ts";
+} from "../test_deps.ts";
 
 let originalWriteFunction: (p: Uint8Array) => Promise<number>;
 
@@ -139,11 +139,11 @@ describe("command", () => {
     command.issueCommand(
       "some-command",
       {
-        prop1: ({ test: "object" } as unknown) as string,
-        prop2: (123 as unknown) as string,
-        prop3: (true as unknown) as string,
+        prop1: { test: "object" } as unknown as string,
+        prop2: 123 as unknown as string,
+        prop3: true as unknown as string,
       },
-      ({ test: "object" } as unknown) as string,
+      { test: "object" } as unknown as string,
     );
 
     fixtures.assertWriteCalls([

@@ -4,12 +4,9 @@
 import { AnnotationProperties } from "../mod.ts";
 import { CommandProperties } from "./command.ts";
 
-import { SEP } from "https://deno.land/std@0.129.0/path/separator.ts";
-import { EOL } from "https://deno.land/std@0.129.0/fs/eol.ts";
-import {
-  dirname,
-  fromFileUrl,
-} from "https://deno.land/std@0.129.0/path/mod.ts";
+import { SEP } from "../deps.ts";
+import { EOL } from "../deps.ts";
+import { dirname, fromFileUrl } from "../deps.ts";
 
 export const __dirname = dirname(fromFileUrl(import.meta.url));
 export const sep = SEP;
@@ -75,10 +72,7 @@ class MockFunctionData {
       this.incrementCallCount();
     });
 
-    mockFunctionToIdMap.set(
-      this.getFunction(),
-      this.id,
-    );
+    mockFunctionToIdMap.set(this.getFunction(), this.id);
   }
 
   getFunction(): Function {

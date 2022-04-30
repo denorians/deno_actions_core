@@ -1,4 +1,5 @@
 // TODO : implement oidc
+// TODO : import external deps from ../deps.ts (https://deno.land/manual/linking_to_external_code#it-seems-unwieldy-to-import-urls-everywhere)
 
 // import * as actions_http_client from "@actions/http-client";
 // import { IRequestOptions } from "@actions/http-client/interfaces";
