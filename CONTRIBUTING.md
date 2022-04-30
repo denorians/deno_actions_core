@@ -8,6 +8,11 @@ okay to submit a PR by itself with no accompanying issue.
 
 ## Code
 
+### Tool dependencies
+
+- [`deno`](https://deno.land/#installation): v1.21
+- [deno VS Code extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
+
 ### Running tests
 
 Keep in mind that three flags are required:
