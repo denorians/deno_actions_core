@@ -22,4 +22,3 @@ jobs:
 
       - name: Test
         run: deno test --allow-read --allow-write --allow-env --unstable
-
