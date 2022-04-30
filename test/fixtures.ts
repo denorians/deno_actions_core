@@ -21,7 +21,7 @@ export function createFileCommandFile(command: string): void {
 
 export function verifyFileCommand(
   command: string,
-  expectedContents: string
+  expectedContents: string,
 ): void {
   const filePath = path.join(__dirname, `test/${command}`);
   const contents = fs.readFileSync(filePath, "utf8");

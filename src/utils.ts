@@ -33,7 +33,7 @@ export function toCommandValue(input: any): string {
  * See IssueCommandProperties: https://github.com/actions/runner/blob/main/src/Runner.Worker/ActionCommandManager.cs#L646
  */
 export function toCommandProperties(
-  annotationProperties: AnnotationProperties
+  annotationProperties: AnnotationProperties,
 ): CommandProperties {
   if (!Object.keys(annotationProperties).length) {
     return {};
@@ -100,7 +100,7 @@ export function mockFunction(): Function {
 
 export function assertToHaveBeenCalledTimes(
   func: Function,
-  callCount: number
+  callCount: number,
 ): boolean {
   const id = mockFunctionToIdMap.get(func) || 0;
 

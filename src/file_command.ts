@@ -9,7 +9,7 @@ export function issueCommand(command: string, message: any): void {
 
   if (!filePath) {
     throw new Error(
-      `Unable to find environment variable for file command ${command}`
+      `Unable to find environment variable for file command ${command}`,
     );
   }
 
