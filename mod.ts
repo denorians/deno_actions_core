@@ -80,8 +80,7 @@ export function exportVariable(name: string, val: any): void {
 
   if (filePath) {
     const delimiter = "_GitHubActionsFileCommandDelimeter_";
-    const commandValue =
-      `${name}<<${delimiter}${eol}${convertedVal}${eol}${delimiter}`;
+    const commandValue = `${name}<<${delimiter}${eol}${convertedVal}${eol}${delimiter}`;
     issueFileCommand("ENV", commandValue);
   } else {
     issueCommand("set-env", { name }, convertedVal);
@@ -145,7 +144,7 @@ export function getInput(name: string, options?: InputOptions): string {
  */
 export function getMultilineInput(
   name: string,
-  options?: InputOptions,
+  options?: InputOptions
 ): string[] {
   const inputs: string[] = getInput(name, options)
     .split("\n")
@@ -174,7 +173,7 @@ export function getBooleanInput(name: string, options?: InputOptions): boolean {
 
   throw new TypeError(
     `Input does not meet YAML 1.2 "Core Schema" specification: ${name}\n` +
-      `Support boolean input list: \`true | True | TRUE | false | False | FALSE\``,
+      `Support boolean input list: \`true | True | TRUE | false | False | FALSE\``
   );
 }
 
@@ -236,12 +235,12 @@ export function debug(message: string): void {
  */
 export function error(
   message: string | Error,
-  properties: AnnotationProperties = {},
+  properties: AnnotationProperties = {}
 ): void {
   issueCommand(
     "error",
     toCommandProperties(properties),
-    message instanceof Error ? message.toString() : message,
+    message instanceof Error ? message.toString() : message
   );
 }
 
@@ -252,12 +251,12 @@ export function error(
  */
 export function warning(
   message: string | Error,
-  properties: AnnotationProperties = {},
+  properties: AnnotationProperties = {}
 ): void {
   issueCommand(
     "warning",
     toCommandProperties(properties),
-    message instanceof Error ? message.toString() : message,
+    message instanceof Error ? message.toString() : message
   );
 }
 
@@ -268,12 +267,12 @@ export function warning(
  */
 export function notice(
   message: string | Error,
-  properties: AnnotationProperties = {},
+  properties: AnnotationProperties = {}
 ): void {
   issueCommand(
     "notice",
     toCommandProperties(properties),
-    message instanceof Error ? message.toString() : message,
+    message instanceof Error ? message.toString() : message
   );
 }
 

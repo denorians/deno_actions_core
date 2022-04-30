@@ -10,7 +10,7 @@ import {
   beforeEach,
   describe,
   it,
-} from "https://deno.land/x/test_suite@0.13.0/mod.ts";
+} from "../test_deps.ts";
 
 let originalWriteFunction: (p: Uint8Array) => Promise<number>;
 
@@ -40,7 +40,7 @@ describe("command", () => {
     command.issueCommand(
       "some-command",
       {},
-      "percent % percent % cr \r cr \r lf \n lf \n",
+      "percent % percent % cr \r cr \r lf \n lf \n"
     );
 
     fixtures.assertWriteCalls([
@@ -63,10 +63,9 @@ describe("command", () => {
     command.issueCommand(
       "some-command",
       {
-        name:
-          "percent % percent % cr \r cr \r lf \n lf \n colon : colon : comma , comma ,",
+        name: "percent % percent % cr \r cr \r lf \n lf \n colon : colon : comma , comma ,",
       },
-      "",
+      ""
     );
 
     fixtures.assertWriteCalls([
@@ -80,7 +79,7 @@ describe("command", () => {
     command.issueCommand(
       "some-command",
       {},
-      "%25 %25 %0D %0D %0A %0A %3A %3A %2C %2C",
+      "%25 %25 %0D %0D %0A %0A %3A %3A %2C %2C"
     );
 
     fixtures.assertWriteCalls([
@@ -98,7 +97,7 @@ describe("command", () => {
     command.issueCommand(
       "some-command",
       { prop1: "value 1", prop2: "value 2" },
-      "some message",
+      "some message"
     );
 
     fixtures.assertWriteCalls([
@@ -115,7 +114,7 @@ describe("command", () => {
     command.issueCommand(
       "some-command",
       { prop1: "value 1", prop2: "value 2" },
-      "",
+      ""
     );
 
     fixtures.assertWriteCalls([
@@ -127,7 +126,7 @@ describe("command", () => {
     command.issueCommand(
       "some-command",
       { prop1: "value 1", prop2: "value 2", prop3: "value 3" },
-      "",
+      ""
     );
 
     fixtures.assertWriteCalls([
@@ -139,11 +138,11 @@ describe("command", () => {
     command.issueCommand(
       "some-command",
       {
-        prop1: ({ test: "object" } as unknown) as string,
-        prop2: (123 as unknown) as string,
-        prop3: (true as unknown) as string,
+        prop1: { test: "object" } as unknown as string,
+        prop2: 123 as unknown as string,
+        prop3: true as unknown as string,
       },
-      ({ test: "object" } as unknown) as string,
+      { test: "object" } as unknown as string
     );
 
     fixtures.assertWriteCalls([

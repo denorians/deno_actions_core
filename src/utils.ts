@@ -4,12 +4,9 @@
 import { AnnotationProperties } from "../mod.ts";
 import { CommandProperties } from "./command.ts";
 
-import { SEP } from "https://deno.land/std@0.129.0/path/separator.ts";
-import { EOL } from "https://deno.land/std@0.129.0/fs/eol.ts";
-import {
-  dirname,
-  fromFileUrl,
-} from "https://deno.land/std@0.129.0/path/mod.ts";
+import { SEP } from "../deps.ts";
+import { EOL } from "../deps.ts";
+import { dirname, fromFileUrl } from "../deps.ts";
 
 export const __dirname = dirname(fromFileUrl(import.meta.url));
 export const sep = SEP;
@@ -36,7 +33,7 @@ export function toCommandValue(input: any): string {
  * See IssueCommandProperties: https://github.com/actions/runner/blob/main/src/Runner.Worker/ActionCommandManager.cs#L646
  */
 export function toCommandProperties(
-  annotationProperties: AnnotationProperties,
+  annotationProperties: AnnotationProperties
 ): CommandProperties {
   if (!Object.keys(annotationProperties).length) {
     return {};
@@ -75,10 +72,7 @@ class MockFunctionData {
       this.incrementCallCount();
     });
 
-    mockFunctionToIdMap.set(
-      this.getFunction(),
-      this.id,
-    );
+    mockFunctionToIdMap.set(this.getFunction(), this.id);
   }
 
   getFunction(): Function {
@@ -106,7 +100,7 @@ export function mockFunction(): Function {
 
 export function assertToHaveBeenCalledTimes(
   func: Function,
-  callCount: number,
+  callCount: number
 ): boolean {
   const id = mockFunctionToIdMap.get(func) || 0;
 
