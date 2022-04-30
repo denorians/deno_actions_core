@@ -115,7 +115,7 @@ describe("core", () => {
 
     fixtures.verifyFileCommand(
       command,
-      `my var<<_GitHubActionsFileCommandDelimeter_${eol}var val${eol}_GitHubActionsFileCommandDelimeter_${eol}`
+      `my var<<_GitHubActionsFileCommandDelimeter_${eol}var val${eol}_GitHubActionsFileCommandDelimeter_${eol}`,
     );
   });
 
@@ -128,7 +128,7 @@ describe("core", () => {
 
     fixtures.verifyFileCommand(
       command,
-      `my var<<_GitHubActionsFileCommandDelimeter_${eol}true${eol}_GitHubActionsFileCommandDelimeter_${eol}`
+      `my var<<_GitHubActionsFileCommandDelimeter_${eol}true${eol}_GitHubActionsFileCommandDelimeter_${eol}`,
     );
   });
 
@@ -141,7 +141,7 @@ describe("core", () => {
 
     fixtures.verifyFileCommand(
       command,
-      `my var<<_GitHubActionsFileCommandDelimeter_${eol}5${eol}_GitHubActionsFileCommandDelimeter_${eol}`
+      `my var<<_GitHubActionsFileCommandDelimeter_${eol}5${eol}_GitHubActionsFileCommandDelimeter_${eol}`,
     );
   });
 
@@ -183,7 +183,7 @@ describe("core", () => {
     assertThrows(
       () => core.getInput("missing", { required: true }),
       undefined,
-      "Input required and not supplied: missing"
+      "Input required and not supplied: missing",
     );
   });
 
@@ -202,7 +202,7 @@ describe("core", () => {
   it("getInput handles multiple spaces", () => {
     assertEquals(
       core.getInput("multiple spaces variable"),
-      "I have multiple spaces"
+      "I have multiple spaces",
     );
   });
 
@@ -221,14 +221,14 @@ describe("core", () => {
   it("getInput trims whitespace when option is explicitly true", () => {
     assertEquals(
       core.getInput("with trailing whitespace", { trimWhitespace: true }),
-      "some val"
+      "some val",
     );
   });
 
   it("getInput does not trim whitespace when option is false", () => {
     assertEquals(
       core.getInput("with trailing whitespace", { trimWhitespace: false }),
-      "  some val  "
+      "  some val  ",
     );
   });
 
@@ -239,7 +239,7 @@ describe("core", () => {
   it("getInput gets required input", () => {
     assertEquals(
       core.getBooleanInput("boolean input", { required: true }),
-      true
+      true,
     );
   });
 
@@ -257,7 +257,7 @@ describe("core", () => {
       () => core.getBooleanInput("wrong boolean input"),
       undefined,
       'Input does not meet YAML 1.2 "Core Schema" specification: wrong boolean input\n' +
-        `Support boolean input list: \`true | True | TRUE | false | False | FALSE\``
+        `Support boolean input list: \`true | True | TRUE | false | False | FALSE\``,
     );
   });
 
