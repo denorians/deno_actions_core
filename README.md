@@ -1,7 +1,8 @@
 # deno_actions_core
 
-> Deno port of the core package in
-> [github.com/actions/toolkit](https://github.com/actions/toolkit).
+> Deno port of the
+> [core](https://github.com/actions/toolkit/tree/main/packages/core) package in
+> [actions/toolkit](https://github.com/actions/toolkit).
 
 ## Getting Started
 
