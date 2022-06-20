@@ -10,7 +10,7 @@ okay to submit a PR by itself with no accompanying issue.
 
 ### Tool dependencies
 
-- [`deno`](https://deno.land/#installation): v1.21
+- [`deno`](https://deno.land/#installation): v1.23.0
 - [deno VS Code extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
 
 ### Running tests

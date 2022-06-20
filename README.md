@@ -11,11 +11,13 @@
    import * as core from "https://deno.land/x/deno_actions_core/mod.ts";
    ```
 
-2. Refer to the [usage guide](./USAGE.md).
+2. Refer to the
+   [usage guide](https://github.com/reeseschultz/deno_actions_core/blob/main/USAGE.md#usage).
 
 ## Contributing
 
-Refer to the [contributing guide](./CONTRIBUTING.md).
+Refer to the
+[contributing guide](https://github.com/reeseschultz/deno_actions_core/blob/main/CONTRIBUTING.md#contributing).
 
 ## Acknowledgments
 
@@ -27,7 +29,8 @@ that of a conventional Deno module. Note that the original
 [MIT-licensed](https://github.com/actions/toolkit/blob/main/packages/core/LICENSE.md)
 package was created by GitHub.
 
-Copies of this codebase should preserve all included acknowledgments.
+Copies and derivatives of this codebase should preserve all included
+acknowledgments.
 
 ## License
 
