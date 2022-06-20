@@ -182,7 +182,7 @@ describe("core", () => {
   it("getInput throws on missing required input", () => {
     assertThrows(
       () => core.getInput("missing", { required: true }),
-      undefined,
+      Error,
       "Input required and not supplied: missing",
     );
   });
@@ -255,7 +255,7 @@ describe("core", () => {
   it("getBooleanInput handles wrong boolean input", () => {
     assertThrows(
       () => core.getBooleanInput("wrong boolean input"),
-      undefined,
+      Error,
       'Input does not meet YAML 1.2 "Core Schema" specification: wrong boolean input\n' +
         `Support boolean input list: \`true | True | TRUE | false | False | FALSE\``,
     );
