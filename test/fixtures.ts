@@ -1,7 +1,6 @@
-import { path } from "../test_deps.ts";
 import { fs } from "../test_deps.ts";
 
-import { assertEquals } from "../test_deps.ts";
+import { assertEquals, join } from "../test_deps.ts";
 
 import { __dirname, assertToHaveBeenCalledTimes } from "../src/utils.ts";
 
@@ -10,7 +9,7 @@ export function assertWriteCalls(calls: string[]): void {
 }
 
 export function createFileCommandFile(command: string): void {
-  const filePath = path.join(__dirname, `test/${command}`);
+  const filePath = join(__dirname, `test/${command}`);
 
   Deno.env.set(`GITHUB_${command}`, filePath);
 
@@ -23,7 +22,7 @@ export function verifyFileCommand(
   command: string,
   expectedContents: string,
 ): void {
-  const filePath = path.join(__dirname, `test/${command}`);
+  const filePath = join(__dirname, `test/${command}`);
   const contents = fs.readFileSync(filePath, "utf8");
 
   try {

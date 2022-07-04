@@ -1,22 +1,28 @@
-import { path } from "./test_deps.ts";
-import { fs } from "./test_deps.ts";
 import * as core from "./mod.ts";
 import * as fixtures from "./test/fixtures.ts";
+
+import { sep } from "./deps.ts";
 
 import {
   __dirname,
   eol,
   mockFunction,
-  sep,
   textEncoder,
   toCommandProperties,
 } from "./src/utils.ts";
 
+import {
+  assertEquals,
+  assertThrows,
+  beforeAll,
+  beforeEach,
+  describe,
+  fs,
+  it,
+  join,
+} from "./test_deps.ts";
+
 // import { HttpClient } from "@actions/http-client"; // TODO : implement oidc
-
-import { assertEquals, assertThrows } from "./test_deps.ts";
-
-import { beforeAll, beforeEach, describe, it } from "./test_deps.ts";
 
 const testEnvVars = {
   "my var": "",
@@ -54,7 +60,7 @@ const testEnvVars = {
 
 describe("core", () => {
   beforeAll(() => {
-    const filePath = path.join(__dirname, `test`);
+    const filePath = join(__dirname, `test`);
 
     if (!fs.existsSync(filePath)) {
       fs.mkdirSync(filePath);

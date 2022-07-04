@@ -1,15 +1,12 @@
 // deno-lint-ignore-file
-// deno-lint-ignore-file no-explicit-any
 
 import { AnnotationProperties } from "../mod.ts";
 import { CommandProperties } from "./command.ts";
 
-import { SEP } from "../deps.ts";
 import { EOL } from "../deps.ts";
 import { dirname, fromFileUrl } from "../deps.ts";
 
 export const __dirname = dirname(fromFileUrl(import.meta.url));
-export const sep = SEP;
 export const eol: string = Deno.build.os === "windows" ? EOL.CRLF : EOL.LF;
 export const textEncoder = new TextEncoder();
 

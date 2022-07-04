@@ -264,6 +264,31 @@ core.saveState("pidToKill", 12345);
 process.kill(core.getState("pidToKill"));
 ```
 
+## Job summaries
+
+Add custom Markdown
+[job summaries](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary)
+like this:
+
+```typescript
+await core.summary
+  .addHeading("Test Results")
+  .addTable([
+    [{ data: "File", header: true }, { data: "Result", header: true }],
+    ["foo.ts", "Pass ✅"],
+    ["bar.ts", "Fail ❌"],
+    ["foo.ts", "Pass ✅"],
+  ])
+  .addDetails(
+    "📚 View raw output",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  )
+  .addQuote("With great power comes great responsibility")
+  .addLink("Check out this site!", "https://github.com")
+  .addSeparator()
+  .write();
+```
+
 ## OIDC token
 
 Not yet implemented.

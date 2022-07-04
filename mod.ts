@@ -4,9 +4,10 @@ import { issue, issueCommand } from "./src/command.ts";
 
 import { issueCommand as issueFileCommand } from "./src/file_command.ts";
 
+import { sep } from "./deps.ts";
+
 import {
   eol,
-  sep,
   textEncoder,
   toCommandProperties,
   toCommandValue,
@@ -348,6 +349,16 @@ export function saveState(name: string, value: any): void {
 export function getState(name: string): string {
   return Deno.env.get(`STATE_${name}`) || "";
 }
+
+/**
+ * Summary exports
+ */
+export { summary } from "./src/summary.ts";
+
+/**
+ * TODO : Path exports
+ */
+// export { toPlatformPath, toPosixPath, toWin32Path } from "./src/path_utils.ts";
 
 // TODO : implement oidc
 // export async function getIDToken(aud?: string): Promise<string> {
