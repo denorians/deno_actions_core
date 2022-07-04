@@ -289,6 +289,26 @@ await core.summary
   .write();
 ```
 
+## Filesystem path helpers
+
+You can use these methods to manipulate file paths across operating systems:
+
+```typescript
+core.toPosixPath("\\foo\\bar"); // => /foo/bar
+core.toWin32Path("/foo/bar"); // => \foo\bar
+```
+
+Alternatively, `toPlatformPath` converts input paths to the expected value on
+the runner's operating system:
+
+```typescript
+// On a Windows runner.
+core.toPlatformPath("/foo/bar"); // => \foo\bar
+
+// On a Linux runner.
+core.toPlatformPath("\\foo\\bar"); // => /foo/bar
+```
+
 ## OIDC token
 
 Not yet implemented.

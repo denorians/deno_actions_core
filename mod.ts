@@ -356,9 +356,9 @@ export function getState(name: string): string {
 export { summary } from "./src/summary.ts";
 
 /**
- * TODO : Path exports
+ * Path exports
  */
-// export { toPlatformPath, toPosixPath, toWin32Path } from "./src/path_utils.ts";
+export { toPlatformPath, toPosixPath, toWin32Path } from "./src/path_utils.ts";
 
 // TODO : implement oidc
 // export async function getIDToken(aud?: string): Promise<string> {
