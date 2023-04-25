@@ -4,6 +4,8 @@
 > [core](https://github.com/actions/toolkit/tree/main/packages/core) package in
 > [actions/toolkit](https://github.com/actions/toolkit).
 
+⚠️ Please note that as of version 1.28, Deno now supports npm modules, which means this module is no longer necessary. We recommend using the npm module that this Deno port is based on instead.
+
 ## Getting Started
 
 1. Import the module:
